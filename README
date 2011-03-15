@@ -1,0 +1,15 @@
+#Annovent
+
+Annovent is a simple to use event dispatcher inspired by the symfony component event dispatching implementation. It tries to provide all the features symfony does with some useful extensions.
+
+##Simple Usage
+
+The Annovent dispatcher can be used in a standard way:
+<pre>$dispatcher = new Dispatcher();
+$dispatcher->connect('SomeComponent.Render)', array($listener, 'Method1');
+$dispatcher->notify(new Event('SomeComponent.Render', array('foo' => 'bar');</pre>
+
+##Namespace
+
+##Annotation
+
