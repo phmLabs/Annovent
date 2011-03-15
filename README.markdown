@@ -38,3 +38,16 @@ Using the connectListener method it is possible to connect a bunch of callbacks 
 
 ##Named Parameters
 
+If desired the event dispatcher can be used with named parameters.
+
+<pre>class Listener2
+{
+  /**
+   * @Event("SomeComponent.Render")
+   */
+  public function method1($argument1, $foo)
+  {
+  }
+}
+$dispatcher->notify(new Event('SomeComponent.Render', array('foo' => 'bar', 'argument1' => 'arg1' );</pre>
+
