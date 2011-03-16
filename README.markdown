@@ -49,5 +49,5 @@ If desired the event dispatcher can be used with named parameters.
   {
   }
 }
-$dispatcher->notify(new Event('SomeComponent.Render', array('foo' => 'bar', 'argument1' => 'arg1' );</pre>
+$dispatcher->notify(new Event('SomeComponent.Render', array('foo' => 'bar', 'argument1' => 'arg1' ));</pre>
 
