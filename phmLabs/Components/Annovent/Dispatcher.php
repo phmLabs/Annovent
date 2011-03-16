@@ -3,10 +3,9 @@
 namespace phmLabs\Components\Annovent;
 
 use phmLabs\Components\NamedParameters\Functions;
-use Doctrine\Common\Annotations\AnnotationReader;
-
 use phmLabs\Components\Annovent\Event\EventInterface;
 
+use Doctrine\Common\Annotations\AnnotationReader;
 use ReflectionClass, ReflectionMethod;
 
 class Dispatcher implements DispatcherInterface
