@@ -6,15 +6,15 @@ Annovent is a simple to use event dispatcher inspired by the symfony component e
 
 The Annovent dispatcher can be used in a simple and standard way as you are used from symfony:
 <pre>$dispatcher = new Dispatcher();
-$dispatcher->connect('SomeComponent.Render'), array($listener, 'Method1');
-$dispatcher->notify(new Event('SomeComponent.Render', array('foo' => 'bar');</pre>
+$dispatcher->connect('SomeComponent.Render', array($listener, 'Method1'));
+$dispatcher->notify(new Event('SomeComponent.Render', array('foo' => 'bar'));</pre>
 
 ##Namespace
 
 An extra feature of this event dispatcher is the so called namespacing. It is possible to register a lister to a complete set events belonging to a special namespace.
 
-<pre>$dispatcher->connect('SomeComponent.*', array($listener, 'Method1');
-$dispatcher->connect('*', array($listener, 'Method2');</pre>
+<pre>$dispatcher->connect('SomeComponent.*', array($listener, 'Method1'));
+$dispatcher->connect('*', array($listener, 'Method2'));</pre>
 
 The first listener will be notified whenever a event is fired that starts with SomeComponent. The second one will always be notified.
 
