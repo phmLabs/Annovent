@@ -2,10 +2,11 @@
 
 namespace phmLabs\Components\Annovent;
 
+use Doctrine\Common\Annotations\AnnotationRegistry;
+use Doctrine\Common\Annotations\SimpleAnnotationReader;
 use phmLabs\Components\NamedParameters\Functions;
 use phmLabs\Components\Annovent\Event\EventInterface;
 
-use Doctrine\Common\Annotations\AnnotationReader;
 use ReflectionClass, ReflectionMethod;
 
 class Dispatcher implements DispatcherInterface
@@ -15,9 +16,10 @@ class Dispatcher implements DispatcherInterface
 
   public function __construct()
   {
-    $this->annotationReader = new AnnotationReader();
-    $this->annotationReader->setDefaultAnnotationNamespace('phmLabs\Components\Annovent\Annotation\\');
-    $this->annotationReader->setAutoloadAnnotations(true);
+    $this->annotationReader = new SimpleAnnotationReader();
+    $this->annotationReader->addNamespace('phmLabs\Components\Annovent\Annotation');
+
+    AnnotationRegistry::registerFile(__DIR__.'/Annotation/Event.php');
   }
 
   /**
@@ -90,7 +92,7 @@ class Dispatcher implements DispatcherInterface
         return $result;
       }
     }
-    return $result;
+    return null;
   }
 
   /**
@@ -144,7 +146,7 @@ class Dispatcher implements DispatcherInterface
    * This function is used to register a listener. Listeners are normal classes that are
    * decorated with annotations.
    *
-   * @param Listener $listener
+   * @param callable $listener
    * @throws Exception
    */
   public function connectListener($listener, $priority = 0)
