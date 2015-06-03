@@ -16,5 +16,9 @@
     ],
     "autoload": {
         "psr-0": {"phmLabs\\": "src"}
+    },
+
+    "require": {
+        "phmlabs/namedparameters": "dev-master"
     }
 }
