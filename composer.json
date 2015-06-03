@@ -1,9 +1,12 @@
 {
     "name": "phmlabs/annovent",
     "description": "Simple lightweight event dispatcher using annotations for registering listeners",
+
     "require": {
-        "doctrine/annotations": "~1.0.0"
+        "doctrine/annotations": "~1.0.0",
+        "phmlabs/namedparameters": "dev-master"
     },
+    
     "require-dev": {
         "phpunit/phpunit": "~3.7.0"
     },
@@ -19,6 +22,6 @@
     },
 
     "require": {
-        "phmlabs/namedparameters": "dev-master"
+
     }
 }
