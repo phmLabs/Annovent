@@ -4,7 +4,7 @@
 
     "require": {
         "doctrine/annotations": "~1.0.0",
-        "phmlabs/namedparameters": "dev-master"
+        "phmlabs/namedparameters": "1.0.0"
     },
 
     "require-dev": {
